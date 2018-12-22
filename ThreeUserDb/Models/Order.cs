@@ -8,31 +8,31 @@ namespace ThreeUserDb.Models
     [Table(Name = "Orders")]
     public class Order : IModel
     {
-        [Column(IsPrimaryKey = true, IsDbGenerated = true)]
+        [Column(IsPrimaryKey = true, IsDbGenerated = true, DbType = "int NOT NULL")]
         public int Id { get; set; }
 
         [DisplayName("Наименование")]
-        [Column(Name = "Name")]
+        [Column(Name = "Name", DbType = "varchar(50) NULL")]
         public string Name { get; set; }
 
 
 
         [Browsable(false)]
-        [Column(Name = "EquipmentId", CanBeNull = true)]
+        [Column(Name = "EquipmentId", DbType = "int NULL", CanBeNull = true)]
         public int? EquipmentId { get; set; }
 
         private EntityRef<Equipment> _equipment;
 
         [Browsable(false)]
-        [Association(Name = "FK_Orders_Users_EquipmentId", Storage = "_equipment", ThisKey = "EquipmentId",
-            IsForeignKey = true)]
+        [Association(Name = "FK_Orders_Users_EquipmentId", Storage = "_equipment", 
+            ThisKey = "EquipmentId", IsForeignKey = true)]
         public Equipment Equipment
         {
             get => _equipment.Entity;
             internal set
             {
                 _equipment.Entity = value;
-                EquipmentId = value.Id;
+                EquipmentId = value?.Id;
             }
         }
 
@@ -41,21 +41,21 @@ namespace ThreeUserDb.Models
 
 
         [Browsable(false)]
-        [Column(Name = "ExecutorId", CanBeNull = true)]
+        [Column(Name = "ExecutorId", DbType = "int NULL", CanBeNull = true)]
         public int? ExecutorId { get; set; }
 
         private EntityRef<User> _executor;
 
         [Browsable(false)]
-        [Association(Name = "FK_Orders_Users_ExecutorId", Storage = "_executor", ThisKey = "ExecutorId",
-            IsForeignKey = true)]
+        [Association(Name = "FK_Orders_Users_ExecutorId", Storage = "_executor", 
+            ThisKey = "ExecutorId", IsForeignKey = true)]
         public User Executor
         {
             get => _executor.Entity;
             internal set
             {
                 _executor.Entity = value;
-                ExecutorId = value.Id;
+                ExecutorId = value?.Id;
             }
         }
 
@@ -64,20 +64,21 @@ namespace ThreeUserDb.Models
 
 
         [Browsable(false)]
-        [Column(Name = "AuthorId", CanBeNull = true)]
+        [Column(Name = "AuthorId", DbType = "int NULL", CanBeNull = true)]
         public int? AuthorId { get; set; }
 
         private EntityRef<User> _author;
 
         [Browsable(false)]
-        [Association(Name = "FK_Orders_Users_AuthorId", Storage = "_author", ThisKey = "AuthorId", IsForeignKey = true)]
+        [Association(Name = "FK_Orders_Users_AuthorId", Storage = "_author",
+            ThisKey = "AuthorId", IsForeignKey = true)]
         public User Author
         {
             get => _author.Entity;
             internal set
             {
                 _author.Entity = value;
-                AuthorId = value.Id;
+                AuthorId = value?.Id;
             }
         }
 
