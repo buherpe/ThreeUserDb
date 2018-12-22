@@ -6,7 +6,7 @@ namespace ThreeUserDb.Models
     [Table(Name = "Equipments")]
     public class Equipment : IModel
     {
-        [Column(IsPrimaryKey = true, IsDbGenerated = true, DbType = "int NOT NULL")]
+        [Column(IsPrimaryKey = true, IsDbGenerated = true, DbType = "int NOT NULL IDENTITY")]
         public int Id { get; set; }
 
         [DisplayName("Наименование")]

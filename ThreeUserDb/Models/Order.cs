@@ -8,7 +8,7 @@ namespace ThreeUserDb.Models
     [Table(Name = "Orders")]
     public class Order : IModel
     {
-        [Column(IsPrimaryKey = true, IsDbGenerated = true, DbType = "int NOT NULL")]
+        [Column(IsPrimaryKey = true, IsDbGenerated = true, DbType = "int NOT NULL IDENTITY")]
         public int Id { get; set; }
 
         [DisplayName("Наименование")]
