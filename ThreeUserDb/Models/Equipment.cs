@@ -3,7 +3,7 @@
 namespace ThreeUserDb.Models
 {
     [Table(Name = "Equipments")]
-    public class Equipment
+    public class Equipment : IModel
     {
         [Column(IsPrimaryKey = true, IsDbGenerated = true)]
         public int Id { get; set; }

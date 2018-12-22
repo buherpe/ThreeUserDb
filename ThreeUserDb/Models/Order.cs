@@ -6,7 +6,7 @@ using System.Linq;
 namespace ThreeUserDb.Models
 {
     [Table(Name = "Orders")]
-    public class Order
+    public class Order : IModel
     {
         [Column(IsPrimaryKey = true, IsDbGenerated = true)]
         public int Id { get; set; }

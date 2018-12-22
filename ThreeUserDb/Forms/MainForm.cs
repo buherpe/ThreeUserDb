@@ -23,18 +23,18 @@ namespace ThreeUserDb.Forms
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            var orders = DbContext.DataContext.GetTable<Order>().GetNewBindingList();
-            
             var tabPageOrders = new TabPage("Заказы");
-            tabPageOrders.Controls.Add(new ListViewControl(orders) {Dock = DockStyle.Fill});
+            tabPageOrders.Controls.Add(new ListViewControl<Order>());
             tabControl1.TabPages.Add(tabPageOrders);
             tabControl1.SelectedIndex = 0;
-
-            var equipment = DbContext.DataContext.GetTable<Equipment>().GetNewBindingList();
             
-            var tabPageEquipments = new TabPage("Заказы");
-            tabPageEquipments.Controls.Add(new ListViewControl(equipment) {Dock = DockStyle.Fill});
+            var tabPageEquipments = new TabPage("Оборудование");
+            tabPageEquipments.Controls.Add(new ListViewControl<Equipment>());
             tabControl1.TabPages.Add(tabPageEquipments);
+            
+            var tabPageUsers = new TabPage("Пользователи");
+            tabPageUsers.Controls.Add(new ListViewControl<User>());
+            tabControl1.TabPages.Add(tabPageUsers);
         }
     }
 }
