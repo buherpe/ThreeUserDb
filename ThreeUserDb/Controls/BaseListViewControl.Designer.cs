@@ -33,6 +33,8 @@
             this.numericUpDownLimit = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownPage = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
+            this.buttonRefresh = new System.Windows.Forms.Button();
+            this.buttonAdd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownLimit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPage)).BeginInit();
@@ -47,10 +49,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewOrders.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridViewOrders.Location = new System.Drawing.Point(3, 3);
+            this.dataGridViewOrders.Location = new System.Drawing.Point(3, 32);
             this.dataGridViewOrders.Name = "dataGridViewOrders";
             this.dataGridViewOrders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewOrders.Size = new System.Drawing.Size(621, 317);
+            this.dataGridViewOrders.Size = new System.Drawing.Size(621, 288);
             this.dataGridViewOrders.TabIndex = 1;
             this.dataGridViewOrders.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewOrders_CellDoubleClick);
             // 
@@ -126,10 +128,33 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Страница";
             // 
+            // buttonRefresh
+            // 
+            this.buttonRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonRefresh.Location = new System.Drawing.Point(549, 3);
+            this.buttonRefresh.Name = "buttonRefresh";
+            this.buttonRefresh.Size = new System.Drawing.Size(75, 23);
+            this.buttonRefresh.TabIndex = 6;
+            this.buttonRefresh.Text = "Обновить";
+            this.buttonRefresh.UseVisualStyleBackColor = true;
+            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
+            // 
+            // buttonAdd
+            // 
+            this.buttonAdd.Location = new System.Drawing.Point(3, 3);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(75, 23);
+            this.buttonAdd.TabIndex = 6;
+            this.buttonAdd.Text = "Добавить";
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            // 
             // BaseListViewControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.buttonAdd);
+            this.Controls.Add(this.buttonRefresh);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.numericUpDownPage);
             this.Controls.Add(this.numericUpDownLimit);
@@ -152,5 +177,7 @@
         private System.Windows.Forms.NumericUpDown numericUpDownPage;
         private System.Windows.Forms.Label label1;
         protected System.Windows.Forms.DataGridView dataGridViewOrders;
+        private System.Windows.Forms.Button buttonRefresh;
+        private System.Windows.Forms.Button buttonAdd;
     }
 }

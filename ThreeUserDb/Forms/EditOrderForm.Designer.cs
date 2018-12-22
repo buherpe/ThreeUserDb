@@ -73,7 +73,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 103);
+            this.label2.Location = new System.Drawing.Point(12, 157);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 13);
             this.label2.TabIndex = 2;
@@ -83,9 +83,11 @@
             // 
             this.comboBoxAuthor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxAuthor.DisplayMember = "Name";
             this.comboBoxAuthor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxAuthor.Enabled = false;
             this.comboBoxAuthor.FormattingEnabled = true;
-            this.comboBoxAuthor.Location = new System.Drawing.Point(98, 100);
+            this.comboBoxAuthor.Location = new System.Drawing.Point(98, 154);
             this.comboBoxAuthor.Name = "comboBoxAuthor";
             this.comboBoxAuthor.Size = new System.Drawing.Size(358, 21);
             this.comboBoxAuthor.TabIndex = 1;
@@ -93,7 +95,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 157);
+            this.label3.Location = new System.Drawing.Point(12, 103);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 13);
             this.label3.TabIndex = 2;
@@ -103,9 +105,10 @@
             // 
             this.comboBoxEquipment.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxEquipment.DisplayMember = "Name";
             this.comboBoxEquipment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxEquipment.FormattingEnabled = true;
-            this.comboBoxEquipment.Location = new System.Drawing.Point(98, 154);
+            this.comboBoxEquipment.Location = new System.Drawing.Point(98, 100);
             this.comboBoxEquipment.Name = "comboBoxEquipment";
             this.comboBoxEquipment.Size = new System.Drawing.Size(358, 21);
             this.comboBoxEquipment.TabIndex = 2;
@@ -115,7 +118,7 @@
             this.buttonSaveAndClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonSaveAndClose.AutoSize = true;
             this.buttonSaveAndClose.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonSaveAndClose.Location = new System.Drawing.Point(331, 195);
+            this.buttonSaveAndClose.Location = new System.Drawing.Point(331, 191);
             this.buttonSaveAndClose.Name = "buttonSaveAndClose";
             this.buttonSaveAndClose.Size = new System.Drawing.Size(125, 23);
             this.buttonSaveAndClose.TabIndex = 3;
@@ -128,7 +131,7 @@
             this.buttonSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonSave.AutoSize = true;
             this.buttonSave.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonSave.Location = new System.Drawing.Point(255, 195);
+            this.buttonSave.Location = new System.Drawing.Point(255, 191);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(70, 23);
             this.buttonSave.TabIndex = 3;
@@ -149,6 +152,7 @@
             // 
             this.comboBoxExecutor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxExecutor.DisplayMember = "Name";
             this.comboBoxExecutor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxExecutor.FormattingEnabled = true;
             this.comboBoxExecutor.Location = new System.Drawing.Point(98, 127);
@@ -160,7 +164,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(468, 230);
+            this.ClientSize = new System.Drawing.Size(468, 226);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.buttonSaveAndClose);
             this.Controls.Add(this.comboBoxEquipment);

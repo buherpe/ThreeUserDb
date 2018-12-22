@@ -15,11 +15,10 @@ namespace ThreeUserDb.Controls
 {
     public partial class BaseListViewControl : UserControl
     {
-        
         protected bool IsLimited { get; set; } = true;
         protected decimal Limit { get; set; } = 10;
         protected decimal Page { get; set; } = 1;
-
+        
         protected BaseListViewControl()
         {
             InitializeComponent();
@@ -70,6 +69,17 @@ namespace ThreeUserDb.Controls
         {
             Page = numericUpDownPage.Value;
             ReloadData();
+        }
+
+        private void buttonRefresh_Click(object sender, EventArgs e)
+        {
+            ReloadData();
+        }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            var editForm = new EditOrderForm();
+            editForm.Show();
         }
     }
 }

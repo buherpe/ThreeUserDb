@@ -1,4 +1,5 @@
-﻿using System.Data.Linq.Mapping;
+﻿using System.ComponentModel;
+using System.Data.Linq.Mapping;
 
 namespace ThreeUserDb.Models
 {
@@ -7,11 +8,17 @@ namespace ThreeUserDb.Models
     {
         [Column(IsPrimaryKey = true, IsDbGenerated = true)]
         public int Id { get; set; }
-        [Column(Name = "Username")]
-        public string Username { get; set; }
-        [Column(Name = "Password")]
-        public string Password { get; set; }
+
+        [DisplayName("Имя")]
         [Column(Name = "Name")]
         public string Name { get; set; }
+
+        [DisplayName("Логин")]
+        [Column(Name = "Username")]
+        public string Username { get; set; }
+
+        [Browsable(false)]
+        [Column(Name = "Password")]
+        public string Password { get; set; }
     }
 }
