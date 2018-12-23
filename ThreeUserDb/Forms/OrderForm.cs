@@ -35,7 +35,8 @@ namespace ThreeUserDb.Forms
 
         private void EditForm_Load(object sender, EventArgs e)
         {
-            
+            if (DbContext.CurrentUser.TypeId == 1)
+                comboBoxAuthor.Enabled = true;
         }
 
         private void LoadData()

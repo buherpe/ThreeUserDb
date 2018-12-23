@@ -72,7 +72,7 @@
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(100, 20);
             this.textBoxPassword.TabIndex = 3;
-            this.textBoxPassword.Text = "pass1";
+            this.textBoxPassword.Text = "pass";
             this.textBoxPassword.UseSystemPasswordChar = true;
             // 
             // LoginForm

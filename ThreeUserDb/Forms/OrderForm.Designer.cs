@@ -86,6 +86,7 @@
             this.comboBoxAuthor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxAuthor.DisplayMember = "Name";
+            this.comboBoxAuthor.Enabled = false;
             this.comboBoxAuthor.FormattingEnabled = true;
             this.comboBoxAuthor.Location = new System.Drawing.Point(98, 178);
             this.comboBoxAuthor.Name = "comboBoxAuthor";
