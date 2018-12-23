@@ -60,11 +60,11 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="DbContext.cs" />
-    <Compile Include="Forms\EditOrderForm.cs">
+    <Compile Include="Forms\OrderForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\EditOrderForm.Designer.cs">
-      <DependentUpon>EditOrderForm.cs</DependentUpon>
+    <Compile Include="Forms\OrderForm.Designer.cs">
+      <DependentUpon>OrderForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
@@ -84,23 +84,32 @@
     <Compile Include="Forms\SelectionForm.Designer.cs">
       <DependentUpon>SelectionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\UserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UserForm.Designer.cs">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="IModel.cs" />
-    <Compile Include="Models\Equipment.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserType.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Controls\BaseListViewControl.resx">
       <DependentUpon>BaseListViewControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EditOrderForm.resx">
-      <DependentUpon>EditOrderForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\OrderForm.resx">
+      <DependentUpon>OrderForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserForm.resx">
+      <DependentUpon>UserForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

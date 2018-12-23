@@ -11,32 +11,25 @@ using ThreeUserDb.Models;
 
 namespace ThreeUserDb.Forms
 {
-    public partial class EditOrderForm : Form
+    public partial class OrderForm : Form
     {
         private Order _order { get; set; }
 
-        public EditOrderForm()
+        public OrderForm()
         {
             InitializeComponent();
 
             var users = DbContext.DataContext.GetTable<User>();
-            var equipments = DbContext.DataContext.GetTable<Equipment>();
-
-            comboBoxEquipment.DataSource = equipments.GetNewBindingList();
-            comboBoxEquipment.SelectedItem = null;
-
-            comboBoxExecutor.DataSource = users.GetNewBindingList();
-            comboBoxExecutor.SelectedItem = null;
-
+            
             comboBoxAuthor.DataSource = users.GetNewBindingList();
             comboBoxAuthor.SelectedItem = DbContext.CurrentUser;
         }
 
-        public EditOrderForm(int id)
+        public OrderForm(Order order)
         {
             InitializeComponent();
-
-            _order = DbContext.DataContext.GetTable<Order>().FirstOrDefault(x => x.Id == id);
+            
+            _order = order;
             LoadData();
         }
 
@@ -52,14 +45,11 @@ namespace ThreeUserDb.Forms
             textBoxName.Text = _order.Name;
 
             var users = DbContext.DataContext.GetTable<User>();
-            var equipments = DbContext.DataContext.GetTable<Equipment>();
 
-            comboBoxEquipment.DataSource = equipments.GetNewBindingList();
-            comboBoxEquipment.SelectedItem = _order.Equipment;
+            textBoxEquipment.Text = _order.Equipment;
+            textBoxExecutor.Text = _order.Executor;
+            textBoxCompletedBy.Text = _order.CompletedBy;
 
-            comboBoxExecutor.DataSource = users.GetNewBindingList();
-            comboBoxExecutor.SelectedItem = _order.Executor;
-            
             comboBoxAuthor.DataSource = users.GetNewBindingList();
             comboBoxAuthor.SelectedItem = _order.Author;
         }
@@ -81,20 +71,24 @@ namespace ThreeUserDb.Forms
             {
                 _order = new Order();
                 _order.Name = textBoxName.Text;
-                _order.Equipment = (Equipment)comboBoxEquipment.SelectedItem;
+                _order.Equipment = textBoxEquipment.Text;
+                _order.Executor = textBoxExecutor.Text;
+                _order.CompletedBy = textBoxCompletedBy.Text;
                 _order.Author = (User)comboBoxAuthor.SelectedItem;
-                _order.Executor = (User)comboBoxExecutor.SelectedItem;
 
                 DbContext.DataContext.GetTable<Order>().InsertOnSubmit(_order);
                 DbContext.DataContext.SubmitChanges();
+
+                labelId.Text = $@"{_order.Id}";
 
                 return;
             }
 
             _order.Name = textBoxName.Text;
-            _order.Equipment = (Equipment)comboBoxEquipment.SelectedItem;
+            _order.Equipment = textBoxEquipment.Text;
+            _order.Executor = textBoxExecutor.Text;
+            _order.CompletedBy = textBoxCompletedBy.Text;
             _order.Author = (User)comboBoxAuthor.SelectedItem;
-            _order.Executor = (User)comboBoxExecutor.SelectedItem;
 
             DbContext.DataContext.SubmitChanges();
         }

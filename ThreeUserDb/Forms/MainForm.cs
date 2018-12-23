@@ -28,13 +28,13 @@ namespace ThreeUserDb.Forms
             tabControl1.TabPages.Add(tabPageOrders);
             tabControl1.SelectedIndex = 0;
             
-            var tabPageEquipments = new TabPage("Оборудование");
-            tabPageEquipments.Controls.Add(new ListViewControl<Equipment>());
-            tabControl1.TabPages.Add(tabPageEquipments);
-            
             var tabPageUsers = new TabPage("Пользователи");
             tabPageUsers.Controls.Add(new ListViewControl<User>());
             tabControl1.TabPages.Add(tabPageUsers);
+            
+            var tabPageUserTypes = new TabPage("Типы пользователей");
+            tabPageUserTypes.Controls.Add(new ListViewControl<UserType>());
+            tabControl1.TabPages.Add(tabPageUserTypes);
         }
     }
 }

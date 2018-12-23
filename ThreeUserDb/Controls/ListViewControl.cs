@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
+using ThreeUserDb.Models;
 
 namespace ThreeUserDb.Controls
 {
@@ -9,6 +10,19 @@ namespace ThreeUserDb.Controls
         public ListViewControl()
         {
             base.Dock = DockStyle.Fill;
+
+            EntityType = typeof(T);
+
+            if (EntityType == typeof(Order))
+            {
+                buttonAdd.Visible = true;
+                buttonDelete.Visible = true;
+            }
+            else if (EntityType == typeof(User))
+            {
+                buttonAdd.Visible = true;
+                buttonDelete.Visible = true;
+            }
         }
 
         protected override void ReloadData()
@@ -22,7 +36,7 @@ namespace ThreeUserDb.Controls
                     .Take((int)Limit);
             }
 
-            dataGridViewOrders.DataSource = new BindingSource(query, null);
+            dataGridView.DataSource = new BindingSource(query, null);
         }
     }
 }

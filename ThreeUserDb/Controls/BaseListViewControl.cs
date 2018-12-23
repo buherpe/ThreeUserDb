@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Data.Linq;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Reflection;
 using System.Windows.Forms;
 using ThreeUserDb.Forms;
 using ThreeUserDb.Models;
@@ -18,7 +11,13 @@ namespace ThreeUserDb.Controls
         protected bool IsLimited { get; set; } = true;
         protected decimal Limit { get; set; } = 10;
         protected decimal Page { get; set; } = 1;
-        
+
+        //protected Type EntityType { get; set; }
+        public Type EntityType { get; set; }
+        public object SelectedEntity { get; set; }
+
+        //public event EntityDeleteHandler OnEntityDelete;
+
         protected BaseListViewControl()
         {
             InitializeComponent();
@@ -36,19 +35,19 @@ namespace ThreeUserDb.Controls
 
         private void dataGridViewOrders_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            var item = dataGridViewOrders.Rows[e.RowIndex].DataBoundItem;
+            if (e.RowIndex < 0) return;
+
+            var item = dataGridView.Rows[e.RowIndex].DataBoundItem;
 
             switch (item)
             {
                 case Order order:
-                    var editForm = new EditOrderForm(order.Id);
-                    editForm.Show();
+                    var orderForm = new OrderForm(order);
+                    orderForm.Show();
                     break;
                 case User user:
-                    Console.WriteLine($"{user.Id}");
-                    break;
-                case Equipment equipment:
-                    Console.WriteLine($"{equipment.Id} {equipment.Name}");
+                    var userForm = new UserForm(user);
+                    userForm.Show();
                     break;
             }
         }
@@ -78,8 +77,41 @@ namespace ThreeUserDb.Controls
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            var editForm = new EditOrderForm();
-            editForm.Show();
+            if (EntityType == typeof(Order))
+            {
+                var editForm = new OrderForm();
+                editForm.Show();
+            }
+            else if (EntityType == typeof(User))
+            {
+                var userForm = new UserForm();
+                userForm.Show();
+            }
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            if (dataGridView.SelectedRows.Count < 1) return;
+
+            if (EntityType == typeof(Order))
+            {
+                foreach (var selectedRow in dataGridView.SelectedRows)
+                {
+                    var order = (Order) ((DataGridViewRow) selectedRow).DataBoundItem;
+                    DbContext.DataContext.GetTable<Order>().DeleteOnSubmit(order);
+                }
+            }
+            else if (EntityType == typeof(User))
+            {
+                foreach (var selectedRow in dataGridView.SelectedRows)
+                {
+                    var user = (User) ((DataGridViewRow) selectedRow).DataBoundItem;
+                    DbContext.DataContext.GetTable<User>().DeleteOnSubmit(user);
+                }
+            }
+
+            DbContext.DataContext.SubmitChanges();
+            ReloadData();
         }
     }
 }

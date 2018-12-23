@@ -1,6 +1,6 @@
 ﻿namespace ThreeUserDb.Forms
 {
-    partial class EditOrderForm
+    partial class OrderForm
     {
         /// <summary>
         /// Required designer variable.
@@ -34,11 +34,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.comboBoxAuthor = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBoxEquipment = new System.Windows.Forms.ComboBox();
             this.buttonSaveAndClose = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBoxExecutor = new System.Windows.Forms.ComboBox();
+            this.textBoxExecutor = new System.Windows.Forms.TextBox();
+            this.textBoxEquipment = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBoxCompletedBy = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // labelId
@@ -73,7 +75,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 157);
+            this.label2.Location = new System.Drawing.Point(12, 181);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 13);
             this.label2.TabIndex = 2;
@@ -84,9 +86,8 @@
             this.comboBoxAuthor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxAuthor.DisplayMember = "Name";
-            this.comboBoxAuthor.Enabled = false;
             this.comboBoxAuthor.FormattingEnabled = true;
-            this.comboBoxAuthor.Location = new System.Drawing.Point(98, 154);
+            this.comboBoxAuthor.Location = new System.Drawing.Point(98, 178);
             this.comboBoxAuthor.Name = "comboBoxAuthor";
             this.comboBoxAuthor.Size = new System.Drawing.Size(358, 21);
             this.comboBoxAuthor.TabIndex = 1;
@@ -100,23 +101,12 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Оборудование";
             // 
-            // comboBoxEquipment
-            // 
-            this.comboBoxEquipment.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxEquipment.DisplayMember = "Name";
-            this.comboBoxEquipment.FormattingEnabled = true;
-            this.comboBoxEquipment.Location = new System.Drawing.Point(98, 100);
-            this.comboBoxEquipment.Name = "comboBoxEquipment";
-            this.comboBoxEquipment.Size = new System.Drawing.Size(358, 21);
-            this.comboBoxEquipment.TabIndex = 2;
-            // 
             // buttonSaveAndClose
             // 
             this.buttonSaveAndClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonSaveAndClose.AutoSize = true;
             this.buttonSaveAndClose.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonSaveAndClose.Location = new System.Drawing.Point(331, 191);
+            this.buttonSaveAndClose.Location = new System.Drawing.Point(331, 217);
             this.buttonSaveAndClose.Name = "buttonSaveAndClose";
             this.buttonSaveAndClose.Size = new System.Drawing.Size(125, 23);
             this.buttonSaveAndClose.TabIndex = 3;
@@ -129,7 +119,7 @@
             this.buttonSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonSave.AutoSize = true;
             this.buttonSave.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonSave.Location = new System.Drawing.Point(255, 191);
+            this.buttonSave.Location = new System.Drawing.Point(255, 217);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(70, 23);
             this.buttonSave.TabIndex = 3;
@@ -140,32 +130,59 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 130);
+            this.label4.Location = new System.Drawing.Point(12, 129);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 13);
+            this.label4.Size = new System.Drawing.Size(64, 13);
             this.label4.TabIndex = 2;
-            this.label4.Text = "Исполнитель";
+            this.label4.Text = "Кто принял";
             // 
-            // comboBoxExecutor
+            // textBoxExecutor
             // 
-            this.comboBoxExecutor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBoxExecutor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxExecutor.DisplayMember = "Name";
-            this.comboBoxExecutor.FormattingEnabled = true;
-            this.comboBoxExecutor.Location = new System.Drawing.Point(98, 127);
-            this.comboBoxExecutor.Name = "comboBoxExecutor";
-            this.comboBoxExecutor.Size = new System.Drawing.Size(358, 21);
-            this.comboBoxExecutor.TabIndex = 1;
+            this.textBoxExecutor.Location = new System.Drawing.Point(98, 126);
+            this.textBoxExecutor.Name = "textBoxExecutor";
+            this.textBoxExecutor.Size = new System.Drawing.Size(358, 20);
+            this.textBoxExecutor.TabIndex = 4;
             // 
-            // EditOrderForm
+            // textBoxEquipment
+            // 
+            this.textBoxEquipment.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxEquipment.Location = new System.Drawing.Point(98, 100);
+            this.textBoxEquipment.Name = "textBoxEquipment";
+            this.textBoxEquipment.Size = new System.Drawing.Size(358, 20);
+            this.textBoxEquipment.TabIndex = 4;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 155);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(78, 13);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Кто выполнил";
+            // 
+            // textBoxCompletedBy
+            // 
+            this.textBoxCompletedBy.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxCompletedBy.Location = new System.Drawing.Point(98, 152);
+            this.textBoxCompletedBy.Name = "textBoxCompletedBy";
+            this.textBoxCompletedBy.Size = new System.Drawing.Size(358, 20);
+            this.textBoxCompletedBy.TabIndex = 4;
+            // 
+            // OrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(468, 226);
+            this.ClientSize = new System.Drawing.Size(468, 252);
+            this.Controls.Add(this.textBoxEquipment);
+            this.Controls.Add(this.textBoxCompletedBy);
+            this.Controls.Add(this.textBoxExecutor);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.buttonSaveAndClose);
-            this.Controls.Add(this.comboBoxEquipment);
-            this.Controls.Add(this.comboBoxExecutor);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.comboBoxAuthor);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -173,7 +190,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.labelId);
-            this.Name = "EditOrderForm";
+            this.Name = "OrderForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditForm";
             this.Load += new System.EventHandler(this.EditForm_Load);
@@ -190,10 +207,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBoxAuthor;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBoxEquipment;
         private System.Windows.Forms.Button buttonSaveAndClose;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBoxExecutor;
+        private System.Windows.Forms.TextBox textBoxExecutor;
+        private System.Windows.Forms.TextBox textBoxEquipment;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBoxCompletedBy;
     }
 }

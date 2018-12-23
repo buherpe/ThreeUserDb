@@ -28,33 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridViewOrders = new System.Windows.Forms.DataGridView();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
             this.checkBoxLimit = new System.Windows.Forms.CheckBox();
             this.numericUpDownLimit = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownPage = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonRefresh = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrders)).BeginInit();
+            this.buttonDelete = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownLimit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPage)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridViewOrders
+            // dataGridView
             // 
-            this.dataGridViewOrders.AllowUserToAddRows = false;
-            this.dataGridViewOrders.AllowUserToDeleteRows = false;
-            this.dataGridViewOrders.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dataGridView.AllowUserToAddRows = false;
+            this.dataGridView.AllowUserToDeleteRows = false;
+            this.dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewOrders.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridViewOrders.Location = new System.Drawing.Point(3, 32);
-            this.dataGridViewOrders.Name = "dataGridViewOrders";
-            this.dataGridViewOrders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewOrders.Size = new System.Drawing.Size(621, 288);
-            this.dataGridViewOrders.TabIndex = 1;
-            this.dataGridViewOrders.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewOrders_CellDoubleClick);
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridView.Location = new System.Drawing.Point(3, 32);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView.Size = new System.Drawing.Size(621, 288);
+            this.dataGridView.TabIndex = 1;
+            this.dataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewOrders_CellDoubleClick);
             // 
             // checkBoxLimit
             // 
@@ -147,23 +148,36 @@
             this.buttonAdd.TabIndex = 6;
             this.buttonAdd.Text = "Добавить";
             this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Visible = false;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            // 
+            // buttonDelete
+            // 
+            this.buttonDelete.Location = new System.Drawing.Point(84, 3);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(75, 23);
+            this.buttonDelete.TabIndex = 7;
+            this.buttonDelete.Text = "Удалить";
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Visible = false;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // BaseListViewControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.buttonRefresh);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.numericUpDownPage);
             this.Controls.Add(this.numericUpDownLimit);
             this.Controls.Add(this.checkBoxLimit);
-            this.Controls.Add(this.dataGridViewOrders);
+            this.Controls.Add(this.dataGridView);
             this.Name = "BaseListViewControl";
             this.Size = new System.Drawing.Size(627, 349);
             this.Load += new System.EventHandler(this.BaseListViewControl_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrders)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownLimit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPage)).EndInit();
             this.ResumeLayout(false);
@@ -176,8 +190,9 @@
         private System.Windows.Forms.NumericUpDown numericUpDownLimit;
         private System.Windows.Forms.NumericUpDown numericUpDownPage;
         private System.Windows.Forms.Label label1;
-        protected System.Windows.Forms.DataGridView dataGridViewOrders;
+        protected System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Button buttonRefresh;
-        private System.Windows.Forms.Button buttonAdd;
+        protected System.Windows.Forms.Button buttonAdd;
+        protected System.Windows.Forms.Button buttonDelete;
     }
 }
