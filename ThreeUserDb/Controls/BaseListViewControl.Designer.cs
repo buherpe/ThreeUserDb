@@ -36,6 +36,7 @@
             this.buttonRefresh = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
+            this.buttonReport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownLimit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPage)).BeginInit();
@@ -162,10 +163,21 @@
             this.buttonDelete.Visible = false;
             this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
+            // buttonReport
+            // 
+            this.buttonReport.Location = new System.Drawing.Point(468, 3);
+            this.buttonReport.Name = "buttonReport";
+            this.buttonReport.Size = new System.Drawing.Size(75, 23);
+            this.buttonReport.TabIndex = 8;
+            this.buttonReport.Text = "Отчет";
+            this.buttonReport.UseVisualStyleBackColor = true;
+            this.buttonReport.Visible = false;
+            // 
             // BaseListViewControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.buttonReport);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.buttonRefresh);
@@ -194,5 +206,6 @@
         private System.Windows.Forms.Button buttonRefresh;
         protected System.Windows.Forms.Button buttonAdd;
         protected System.Windows.Forms.Button buttonDelete;
+        private System.Windows.Forms.Button buttonReport;
     }
 }

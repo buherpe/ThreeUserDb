@@ -20,7 +20,7 @@ namespace ThreeUserDb.Forms
             InitializeComponent();
 
             var users = DbContext.DataContext.GetTable<User>();
-            
+
             comboBoxAuthor.DataSource = users.GetNewBindingList();
             comboBoxAuthor.SelectedItem = DbContext.CurrentUser;
         }
@@ -28,7 +28,7 @@ namespace ThreeUserDb.Forms
         public OrderForm(Order order)
         {
             InitializeComponent();
-            
+
             _order = order;
             LoadData();
         }
@@ -75,7 +75,7 @@ namespace ThreeUserDb.Forms
                 _order.Equipment = textBoxEquipment.Text;
                 _order.Executor = textBoxExecutor.Text;
                 _order.CompletedBy = textBoxCompletedBy.Text;
-                _order.Author = (User)comboBoxAuthor.SelectedItem;
+                _order.Author = (User) comboBoxAuthor.SelectedItem;
 
                 DbContext.DataContext.GetTable<Order>().InsertOnSubmit(_order);
                 DbContext.DataContext.SubmitChanges();
@@ -89,7 +89,7 @@ namespace ThreeUserDb.Forms
             _order.Equipment = textBoxEquipment.Text;
             _order.Executor = textBoxExecutor.Text;
             _order.CompletedBy = textBoxCompletedBy.Text;
-            _order.Author = (User)comboBoxAuthor.SelectedItem;
+            _order.Author = (User) comboBoxAuthor.SelectedItem;
 
             DbContext.DataContext.SubmitChanges();
         }

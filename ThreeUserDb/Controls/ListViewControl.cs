@@ -32,8 +32,8 @@ namespace ThreeUserDb.Controls
             if (IsLimited)
             {
                 query = query
-                    .Skip((int)(Limit * (Page - 1)))
-                    .Take((int)Limit);
+                    .Skip((int) (Limit * (Page - 1)))
+                    .Take((int) Limit);
             }
 
             dataGridView.DataSource = new BindingSource(query, null);

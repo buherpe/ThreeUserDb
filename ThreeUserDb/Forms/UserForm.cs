@@ -67,7 +67,7 @@ namespace ThreeUserDb.Forms
                 _user.Name = textBoxName.Text;
                 _user.Username = textBoxUsername.Text;
                 _user.Password = textBoxPassword.Text;
-                _user.Type = (UserType)comboBoxType.SelectedItem;
+                _user.Type = (UserType) comboBoxType.SelectedItem;
 
                 DbContext.DataContext.GetTable<User>().InsertOnSubmit(_user);
                 DbContext.DataContext.SubmitChanges();
@@ -80,7 +80,7 @@ namespace ThreeUserDb.Forms
             _user.Name = textBoxName.Text;
             _user.Username = textBoxUsername.Text;
             _user.Password = textBoxPassword.Text;
-            _user.Type = (UserType)comboBoxType.SelectedItem;
+            _user.Type = (UserType) comboBoxType.SelectedItem;
 
             DbContext.DataContext.SubmitChanges();
         }

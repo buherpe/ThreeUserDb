@@ -27,7 +27,7 @@ namespace ThreeUserDb.Forms
             tabPageOrders.Controls.Add(new ListViewControl<Order>());
             tabControl1.TabPages.Add(tabPageOrders);
             tabControl1.SelectedIndex = 0;
-            
+
             if (DbContext.CurrentUser.TypeId == 1)
             {
                 var tabPageUsers = new TabPage("Пользователи");
